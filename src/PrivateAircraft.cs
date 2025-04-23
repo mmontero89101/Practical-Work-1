@@ -6,7 +6,7 @@ namespace PracticalWork
     {
         public string Owner { get; set; }
 
-        public override void Infoavion()
+        public override void UpdateOfPositionAndFuel()
         {
             Console.WriteLine($"[Privado] ID: {ID}, Propietario: {Owner}, Estado: {Status}");
         }

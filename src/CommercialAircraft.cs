@@ -7,7 +7,7 @@ namespace PracticalWork
     {
         public int NumberOfPassengers { get; set; }
 
-        public override void Infoavion()
+        public override void UpdateOfPositionAndFuel()
         {
             Console.WriteLine($"[Comercial] ID: {ID}, Pasajeros: {NumberOfPassengers}, Estado: {Status}");
         }
