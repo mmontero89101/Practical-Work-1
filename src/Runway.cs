@@ -12,6 +12,7 @@ namespace PracticalWork
             ID=id;
             RunwayStatus="Free";
             CurrentAircraft=null;
+            TicksAvailability = 0;
         }
         public bool RequestRunway(Aircraft aircraft){
 
@@ -26,9 +27,22 @@ namespace PracticalWork
         {
             if(RunwayStatus=="Occupied"&&CurrentAircraft!=null){
                 CurrentAircraft=null;
-                TicksAvailability=3;
+                TicksAvailability=0;
                 RunwayStatus="Free";
             }
         }
+
+        public bool IsFree()
+        {
+            return RunwayStatus="Free";
+        }
+
+        public int GetRemainingTicks()
+        {
+        
+            return TicksAvailability;
+        }
+
+
     }
 }
