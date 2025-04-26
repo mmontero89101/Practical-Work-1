@@ -8,3 +8,5 @@ Luis - Today, 21st of April, I've created the Runway and Aircraft Status enums i
 Luis- I've moved the project to the src file, created the class airport and defined a little bit with some methods, although is not complete"
 
 Luis and Aitor - Expanded the Runway class with the Request Runway, Release Runway and GetRemainingTicks methods that show the request, status and time for the runway in order to be free.
+
+Miguel- Coded the classes Aircraft and Runway, later divided and modified in some things by the members of the team.
