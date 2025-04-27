@@ -16,7 +16,7 @@ namespace PracticalWork
 
         public virtual void UpdateOfPositionAndFuel()
         {
-            if(AircraftStatus == AircraftStatus.InFlight)
+            if(Status == AircraftStatus.InFlight)
             {
                 int distanceToTravel = Speed / 4;
                 int actualTravel = Math.Min(distanceToTravel, Distance);
