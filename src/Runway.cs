@@ -12,14 +12,14 @@ namespace PracticalWork
         public Runway(string id)
         {
             ID=id;
-            RunwayStatus="Free";
+            Status = RunwayStatus.Free;
             CurrentAircraft=null;
             TicksAvailability = 0;
         }
         public bool RequestRunway(Aircraft aircraft){
 
-            if(RunwayStatus == "Free"){
-                RunwayStatus ="Occupied";
+            if( Status == RunwayStatus.Free){
+                 Status = RunwayStatus.Occupied;
                 CurrentAircraft = aircraft;
                 return true;
             }
@@ -27,16 +27,16 @@ namespace PracticalWork
         }
         public void ReleaseRunway()
         {
-            if(RunwayStatus=="Occupied"&&CurrentAircraft!=null){
+            if(Status == RunwayStatus.Occupied && CurrentAircraft!=null){
                 CurrentAircraft=null;
                 TicksAvailability=0;
-                RunwayStatus="Free";
+                Status = RunwayStatus.Free;
             }
         }
 
         public bool IsFree()
         {
-            return RunwayStatus="Free";
+            return Status == RunwayStatus.Free;
         }
 
         public int GetRemainingTicks()

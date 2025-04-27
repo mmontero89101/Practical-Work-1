@@ -14,6 +14,22 @@ namespace PracticalWork
         public double FuelConsumption {get; set;}
         public double CurrentFuel {get; set;}
 
+        public Aircraft(string id, int speed, double fuelCapacity, double fuelConsumption, int distance)
+        {
+
+
+            ID = id;
+            Speed = speed;
+            FuelCapacity = fuelCapacity;
+            FuelConsumption = fuelConsumption;
+            CurrentFuel = fuelCapacity; 
+            Distance = distance;
+            Status = AircraftStatus.InFlight;
+
+        }
+
+        
+
         public virtual void UpdateOfPositionAndFuel()
         {
             if(Status == AircraftStatus.InFlight)

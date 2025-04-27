@@ -7,9 +7,14 @@ namespace PracticalWork
     {
         public int NumberOfPassengers { get; set; }
 
+        public CommercialAircraft(string id, int speed, double fuelCapacity, double fuelConsumption, int distance, int numberOfPassengers) : base(id, speed, fuelCapacity, fuelConsumption, distance)
+        {
+            NumberOfPassengers = numberOfPassengers;
+        }
+
         public override void UpdateOfPositionAndFuel()
         {
-            Console.WriteLine($"[Comercial] ID: {ID}, Pasajeros: {NumberOfPassengers}, Estado: {Status}");
-        }
+           base.UpdateOfPositionAndFuel();
+;       }
     }
 }
