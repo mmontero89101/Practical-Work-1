@@ -10,3 +10,5 @@ Luis- I've moved the project to the src file, created the class airport and defi
 Luis and Aitor - Expanded the Runway class with the Request Runway, Release Runway and GetRemainingTicks methods that show the request, status and time for the runway in order to be free.
 
 Miguel- Coded the classes Aircraft and Runway, later divided and modified in some things by the members of the team.
+
+Luis - Changed Runway and Aircraft classes  by introducing the enums in their main classes. Then Completed The ShowStatus method of the airport class in order to show the status of both aircrafts (their distance, fuel level and so on) and Runways(if there are free runways and the ticks left) and then completed the advancetick method, which update the state of the simulation by 15 minutes.

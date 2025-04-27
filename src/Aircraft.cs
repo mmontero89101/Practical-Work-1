@@ -5,7 +5,7 @@ namespace PracticalWork
     public abstract class Aircraft
     {
         public string ID { get; set; }
-        public string Status {get; set;}
+        public string AircraftStatus Status {get; set;}
         public int Distance { get; set; }
         public int Speed { get; set; }
         public double FuelCapacity { get; set; }

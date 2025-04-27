@@ -3,8 +3,10 @@ namespace PracticalWork
 {
     public class Runway
     {
+
+        public enum RunwayStatus{Free, Occupied}
         public string ID{get;set;}
-        public string RunwayStatus{get;set;}
+        public string RunwayStatus Status {get;set;} = RunwayStatus.Free;
         public Aircraft CurrentAircraft{get;set;}
         public int TicksAvailability{get;set;}=3;
         public Runway(string id)

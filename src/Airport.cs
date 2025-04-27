@@ -22,6 +22,8 @@ namespace PracticalWork
             foreach(var aircraft in Aircrafts)
             {
 
+                Console.WriteLine($"{aircraft.ID}: {aircraft.Status} - Distance: {aircraft.Distance} Km - Fuel: {aircraft.CurrentFuel} L")
+
             }
         }
 
@@ -30,10 +32,49 @@ namespace PracticalWork
         public void AdvanceTick()
         {
 
+            Console.WriteLine("\n Advancing Simulation: ")
+
+            foreach(var aircraft in Aircrafts)
+            {
+            switch(aircraft.Status)
+            {
+                case AircraftStatus.InFlight:
+                    if (aircraft.Distance > 0)
+                    {
+                        double distanceTravelled = aircraft.Speed / 4.0; 
+                        aircraft.Distance = Math.Max(0, aircraft.Distance - distanceTravelled);
+                        aircraft.CurrentFuel -= distanceTravelled * aircraft.FuelConsumption;
+
+                        if (aircraft.Distance == 0)
+                        {
+                            aircraft.Status = AircraftStatus.Waiting;
+                        }
+                    }
+                    break;
+
+                case AircraftStatus.Waiting:
+                    var freeRunway = Runways.Find(r => r.Status == RunwayStatus.Free);
+                    if (freeRunway != null)
+                    {
+                        freeRunway.RequestRunway(aircraft);
+                        aircraft.Status = AircraftStatus.Landing;
+                    }
+                    break;
+
+                case AircraftStatus.Landing:
+                    
+                    break;
+
+                case AircraftStatus.OnGround:
+                    
+                    break;
+            }
+           }
+
         }
 
 
-        //hola.
+        
         
     }
 }
