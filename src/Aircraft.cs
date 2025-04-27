@@ -5,7 +5,7 @@ namespace PracticalWork
     public abstract class Aircraft
     {
 
-        public enum AircraftStatus{InFlight,Waiting,Landing,Onground}
+        public enum AircraftStatus{InFlight,Waiting,Landing,OnGround}
         public string ID {get; set;}
         public AircraftStatus Status {get; set;}
         public int Distance {get; set;}

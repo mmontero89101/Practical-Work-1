@@ -1,11 +1,12 @@
 using System;
+using System.Collections.Generic;
 
 namespace PracticalWork
 {
     public class Airport
     {
-        public List<Runway> Runways {get;set;}= new();
-        public List<Aircraft> Aircrafts {get;set;} = new();
+        public List<Runway> Runways {get;set;}= new List<Runway> ();
+        public List<Aircraft> Aircrafts {get;set;} = new List<Aircraft>();
 
         public void AddAircraft(Aircraft aircraft) => Aircrafts.Add(aircraft);
 
@@ -38,34 +39,34 @@ namespace PracticalWork
             {
             switch(aircraft.Status)
             {
-                case AircraftStatus.InFlight:
+                case Aircraft.AircraftStatus.InFlight:
                     if (aircraft.Distance > 0)
                     {
                         double distanceTravelled = aircraft.Speed / 4.0; 
-                        aircraft.Distance = Math.Max(0, aircraft.Distance - distanceTravelled);
+                        aircraft.Distance = (int)Math.Max(0.0, (double)aircraft.Distance - distanceTravelled);
                         aircraft.CurrentFuel -= distanceTravelled * aircraft.FuelConsumption;
 
                         if (aircraft.Distance == 0)
                         {
-                            aircraft.Status = AircraftStatus.Waiting;
+                            aircraft.Status = Aircraft.AircraftStatus.Waiting;
                         }
                     }
                     break;
 
-                case AircraftStatus.Waiting:
-                    var freeRunway = Runways.Find(r => r.Status == RunwayStatus.Free);
+                case Aircraft.AircraftStatus.Waiting:
+                    var freeRunway = Runways.Find(r => r.Status == Runway.RunwayStatus.Free);
                     if (freeRunway != null)
                     {
                         freeRunway.RequestRunway(aircraft);
-                        aircraft.Status = AircraftStatus.Landing;
+                        aircraft.Status = Aircraft.AircraftStatus.Landing;
                     }
                     break;
 
-                case AircraftStatus.Landing:
+                case Aircraft.AircraftStatus.Landing:
                     
                     break;
 
-                case AircraftStatus.OnGround:
+                case Aircraft.AircraftStatus.OnGround:
                     
                     break;
             }
