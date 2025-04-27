@@ -22,7 +22,7 @@ namespace PracticalWork
             foreach(var aircraft in Aircrafts)
             {
 
-                Console.WriteLine($"{aircraft.ID}: {aircraft.Status} - Distance: {aircraft.Distance} Km - Fuel: {aircraft.CurrentFuel} L")
+                Console.WriteLine($"{aircraft.ID}: {aircraft.Status} - Distance: {aircraft.Distance} Km - Fuel: {aircraft.CurrentFuel} L");
 
             }
         }
@@ -32,7 +32,7 @@ namespace PracticalWork
         public void AdvanceTick()
         {
 
-            Console.WriteLine("\n Advancing Simulation: ")
+            Console.WriteLine("\n Advancing Simulation: ");
 
             foreach(var aircraft in Aircrafts)
             {
