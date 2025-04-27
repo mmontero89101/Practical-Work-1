@@ -5,7 +5,7 @@ namespace PracticalWork
     public abstract class Aircraft
     {
 
-        public enum AircraftStauts{InFlight,Waiting,Landing,Onground}
+        public enum AircraftStatus{InFlight,Waiting,Landing,Onground}
         public string ID {get; set;}
         public AircraftStatus Status {get; set;}
         public int Distance {get; set;}
@@ -14,7 +14,7 @@ namespace PracticalWork
         public double FuelConsumption {get; set;}
         public double CurrentFuel {get; set;}
 
-        public abstract void UpdateOfPositionAndFuel()
+        public virtual void UpdateOfPositionAndFuel()
         {
             if(Status == AircraftStatus.InFlight)
             {
