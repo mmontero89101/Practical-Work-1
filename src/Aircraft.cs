@@ -14,7 +14,7 @@ namespace PracticalWork
         public double FuelConsumption {get; set;}
         public double CurrentFuel {get; set;}
 
-        public virtual void UpdateOfPositionAndFuel()
+        public abstract void UpdateOfPositionAndFuel()
         {
             if(Status == AircraftStatus.InFlight)
             {
